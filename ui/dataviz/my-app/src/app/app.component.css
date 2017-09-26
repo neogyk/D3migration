@@ -1,0 +1,5 @@
+body > svg > path.subunit.SCT { fill: #ddc; }
+body > svg > path.subunit.WLS { fill: #cdd; }
+body > svg > path.subunit.NIR { fill: #cdc; }
+body > svg > path.subunit.ENG { fill: #dcd; }
+body > svg > path.subunit.IRL { display: none; }
