@@ -51,19 +51,19 @@ export class AppComponent {
                            .domain([0, new Number(d3Array.max(migration['all']))])
                            .range(['#F08080',"#A0522D"]);
 
-        /*
+        /***
         var _color = d3Scale.scaleLinear()
                            .domain([0,
                                     d3Array.max(migration['all'])])
                            .range([0,
                                    d3Array.max(migration['all'])]);
-         */
+         ysvg.append("g").call(d3Axes.axisLeft(_color));
+         ***/
 
         console.log('Migration', migration);
         svg.selectAll('path').data(migration['all'])
           .attr('fill', function(d){return color(new Number(d)); });
 
-        //svg.append("g").call(d3Axes.axisLeft(_color));
       })
 
     });
