@@ -39,7 +39,7 @@ export class AppComponent {
     var timeline = d3.select("body").append("svg")
                   .attr('class','timeline')
                   .style('background-color','grey')
-                  .attr('width',1500).attr('height', 200);
+                  .attr('width',1500).attr('height', 120);
 
     var brush = d3.brushX()
                   .extent([[0, 0], [200, 200]])
@@ -66,22 +66,20 @@ export class AppComponent {
               .attr("d",  path);
 
 
-    });
-
-    d3.json('./assets/migration.json', function (error, migration) {
+          d3.json('./assets/migration.json', function (error, migration) {
 
             var length = migration['all'].length;
             var max = new Number(d3Array.max(migration['all']));
             var color = d3Scale.scaleLinear<string>()
                            .domain([0, max])
-                           .range(["#A0522D", '#F08080']);
+                           .range(["#3b5682", '#a01e1e']);
 
             var x = d3Scale.scaleLinear()
                            .domain([0, length])
                            .range([0, 1500]);
             var y = d3Scale.scaleLinear()
                            .domain([0, max])
-                           .range([0,  200]);
+                           .range([0,  120]);
 
 
              var line = d3.line()
@@ -98,6 +96,7 @@ export class AppComponent {
                 .attr('stroke', function(d){return color(new Number(d)); });
 
         });
+    });
 
 
   }
